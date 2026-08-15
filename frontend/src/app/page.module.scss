@@ -44,10 +44,6 @@
   border-radius: 20px;
   overflow: hidden;
   background: $color-grey-light;
-
-  @include tablet-up {
-    height: 458px;
-  }
 }
 
 .bannerImage {
