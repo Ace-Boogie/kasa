@@ -1,4 +1,4 @@
-# Kasa Backend (API Express + SQLite)
+  # Kasa Backend (API Express + SQLite)
 
 Backend minimaliste pour l’application Kasa. Il expose une API REST (Express 5) documentée via OpenAPI, utilise SQLite pour le stockage des données, gère l’authentification par JWT et propose des fonctionnalités autour des biens (propriétés), des utilisateurs, des notes (ratings), des favoris, ainsi que l’upload et la suppression d’images.
 

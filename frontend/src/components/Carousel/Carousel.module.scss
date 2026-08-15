@@ -1,0 +1,147 @@
+@use '../../styles/variables' as *;
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  width: 100%;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  // Hauteur fixe imposée par le backlog : le cadre ne bouge jamais,
+  // quelles que soient les proportions des photos.
+  height: 260px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-grey-light;
+
+  @include tablet-up {
+    height: 358px;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-main-red;
+    outline-offset: 3px;
+  }
+}
+
+.track {
+  display: flex;
+  height: 100%;
+  transition: transform $transition-base;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.image {
+  // Images centrées et recadrées dans le cadre, jamais déformées.
+  object-fit: cover;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $button-icon-size;
+  height: $button-icon-size;
+  padding: 0;
+  border: none;
+  border-radius: $radius-md;
+  background: $color-grey-light;
+  color: $text-primary;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  // Zone tactile de 44x44 sans modifier le visuel.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+  }
+
+  &:hover {
+    background: $color-white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.prev {
+  left: $space-5;
+}
+
+.next {
+  right: $space-5;
+}
+
+.counter {
+  position: absolute;
+  right: $space-5;
+  bottom: $space-5;
+  z-index: 2;
+  margin: 0;
+  padding: $space-1 $space-3;
+  border-radius: $radius-md;
+  background: $color-grey-light;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+}
+
+.thumbnails {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: $space-3;
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 0;
+  border: none;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: $color-grey-light;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity $transition-fast;
+
+  @include tablet-up {
+    height: 109px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.thumbnailActive {
+  opacity: 1;
+  // L'état actif est porté par l'opacité ET par un contour :
+  // l'information ne repose jamais sur la seule couleur.
+  outline: 2px solid $color-main-red;
+  outline-offset: -2px;
+}

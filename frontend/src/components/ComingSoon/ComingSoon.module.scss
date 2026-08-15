@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-5;
+  padding: $space-12 $space-5;
+  text-align: center;
+}
+
+.badge {
+  margin: 0;
+  padding: $space-3 $space-5;
+  background: $color-grey-light;
+  border-radius: $radius-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height;
+  color: $color-main-red;
+}
+
+.description {
+  max-width: 480px;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $button-height;
+  padding: $button-padding;
+  margin-top: $space-6;
+  background: $color-main-red;
+  color: $color-white;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover { background: $color-dark-orange; }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 2px;
+  }
+}

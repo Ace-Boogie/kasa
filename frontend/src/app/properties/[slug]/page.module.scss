@@ -1,0 +1,128 @@
+@use '../../../styles/variables' as *;
+@use 'sass:color';
+
+/**
+ * Mobile : une colonne, ordre galerie → informations → hôte.
+ * Desktop : galerie et hôte côte à côte, informations en dessous à gauche.
+ */
+.page {
+  display: grid;
+  gap: $space-7;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'back'
+    'gallery'
+    'details'
+    'host';
+
+  @include desktop-up {
+    grid-template-columns: minmax(0, 616fr) minmax(0, 345fr);
+    grid-template-areas:
+      'back    back'
+      'gallery host'
+      'details .';
+    align-items: start;
+  }
+}
+
+.back {
+  grid-area: back;
+  padding: $space-5 0;
+  border-bottom: 1px solid $color-grey-light;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-3;
+  height: $button-height;
+  padding: $space-3 $space-5;
+  background: $color-grey-light;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover { background: color.adjust($color-grey-light, $lightness: -5%); }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.gallery { grid-area: gallery; }
+.host { grid-area: host; }
+
+.details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  gap: $space-11;
+  padding: $space-7;
+  background: $surface;
+  border: 1px solid $color-grey-light;
+  border-radius: $radius-lg;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-secondary;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  margin: 0;
+  font-size: $font-size-md;
+  line-height: $line-height;
+}
+
+.amount {
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.unit {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $text-secondary;
+}
+
+.collapses {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+}

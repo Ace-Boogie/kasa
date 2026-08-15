@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $card-width;
+  margin: 0 auto;
+  background: $surface;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  // Le lien couvre toute la carte : l'anneau de focus doit donc l'entourer
+  // elle, et non le seul titre — qui est rogné par son line-clamp.
+  &:has(.link:focus-visible) {
+    outline: 3px solid $color-main-red;
+    outline-offset: 3px;
+  }
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  height: $card-image-height;
+  flex: none;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.favorite {
+  position: absolute;
+  top: $space-5;
+  right: $space-5;
+  z-index: 2;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // Hauteur fixe : le prix reste aligné que le titre tienne sur 1 ou 2 lignes.
+  height: $card-details-height;
+  flex: none;
+  padding: $card-details-padding;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $text-primary;
+  // Deux lignes maximum, comme dans la maquette.
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+
+  // Rend toute la carte cliquable sans imbriquer de lien dans un lien.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  // L'anneau est porté par .card ci-dessus.
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.location {
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $text-secondary;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+}
+
+.amount {
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.unit {
+  font-weight: $font-weight-regular;
+  color: $text-secondary;
+}

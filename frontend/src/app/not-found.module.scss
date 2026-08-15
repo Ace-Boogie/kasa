@@ -1,0 +1,62 @@
+@use '../styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-11;
+  padding: $space-12 0;
+  text-align: center;
+}
+
+.code {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  color: $color-main-red;
+
+  @include tablet-up {
+    font-size: 100px;
+  }
+}
+
+.title {
+  max-width: 342px;
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: $button-height;
+  padding: $button-padding;
+  background: $color-main-red;
+  color: $color-white;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background: $color-dark-orange;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 2px;
+  }
+}

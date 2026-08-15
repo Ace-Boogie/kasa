@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-5;
+  margin-top: $space-11;
+  padding: $footer-padding;
+  background: $surface;
+  border-top: 1px solid $color-grey-light;
+}
+
+.copyright {
+  margin: 0;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $text-secondary;
+  text-align: center;
+}

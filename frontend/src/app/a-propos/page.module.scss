@@ -1,0 +1,65 @@
+@use '../../styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-11;
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height;
+  color: $color-main-red;
+}
+
+.lead {
+  max-width: 742px;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.missionTitle {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  line-height: $line-height;
+  color: $color-main-red;
+}
+
+.missionList {
+  margin: 0;
+  padding-left: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.closing {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $color-main-red;
+}

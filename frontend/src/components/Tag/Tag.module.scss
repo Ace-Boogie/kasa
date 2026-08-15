@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3 $space-5;
+  background: $color-grey-light;
+  border-radius: $radius-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $text-secondary;
+}

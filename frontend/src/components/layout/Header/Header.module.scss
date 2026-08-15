@@ -1,0 +1,130 @@
+@use '../../../styles/variables' as *;
+
+.wrapper {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0;
+
+  @include tablet-up {
+    padding: $space-11 $space-5 0;
+  }
+}
+
+.bar {
+  background: $surface;
+  padding: 0 $space-5;
+
+  @include tablet-up {
+    max-width: 782px;
+    margin: 0 auto;
+    padding: $space-3 $space-12;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-header;
+  }
+
+  @include desktop-up {
+    padding: $space-3 100px;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-11;
+  min-height: 85px;
+
+  @include tablet-up {
+    gap: $space-12;
+    min-height: 40px;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include tablet-up {
+    display: block;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  border-radius: $radius-md;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 4px;
+  }
+}
+
+.logoDesktop {
+  display: none;
+  height: auto;
+
+  @include tablet-up {
+    display: block;
+  }
+}
+
+.logoMobile {
+  display: block;
+  height: auto;
+
+  @include tablet-up {
+    display: none;
+  }
+}
+
+.actions {
+  display: none;
+
+  @include tablet-up {
+    display: flex;
+    align-items: center;
+    gap: $space-8;
+  }
+}
+
+.addProperty {
+  color: $color-main-red;
+  white-space: nowrap;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.separator {
+  width: 1px;
+  height: 5px;
+  background: $color-main-red;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $icon-size;
+  height: $icon-size;
+  color: $color-main-red;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}

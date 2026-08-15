@@ -1,0 +1,117 @@
+@use '../../../styles/variables' as *;
+
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: $color-grey-dark;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+    border-radius: $radius-md;
+  }
+
+  @include tablet-up {
+    display: none;
+  }
+}
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: $space-11;
+  padding: $space-5 $space-5 0;
+  background: $surface;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: $text-primary;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+    border-radius: $radius-md;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid $color-grey-light;
+}
+
+.link {
+  display: block;
+  padding: $space-8 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $text-primary;
+  text-decoration: none;
+
+  &[aria-current='page'] {
+    color: $color-main-red;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: -2px;
+  }
+}
+
+.cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: $button-height;
+  padding: $button-padding;
+  background: $color-main-red;
+  color: $color-white;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-dark-orange;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 2px;
+  }
+}

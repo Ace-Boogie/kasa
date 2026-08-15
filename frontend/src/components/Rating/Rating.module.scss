@@ -1,0 +1,23 @@
+@use '../../styles/variables' as *;
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  margin: 0;
+  padding: $space-3;
+  background: $color-grey-light;
+  border-radius: $radius-lg;
+}
+
+.star {
+  color: $color-main-red;
+  flex: none;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $text-primary;
+}

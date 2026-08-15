@@ -1,0 +1,131 @@
+// ============================================
+// Design tokens — Kasa
+// Extraits de la maquette Figma (Composants)
+// ============================================
+
+// --------------------------------------------
+// COULEURS
+// --------------------------------------------
+
+$color-main-red:      #99331A; // boutons, liens actifs, état survol
+$color-dark-orange:   #842C16; // état focus/hover des boutons
+$color-light-orange:  #FFFBF9; // fond très clair
+$color-black:         #0D0D0D; // texte principal
+$color-white:         #FFFFFF;
+$color-grey-light:    #F5F5F5; // bordures, fonds désactivés, séparateurs
+$color-grey-dark:     #565656; // texte secondaire
+
+// Dégradés du logo (SVG uniquement — ne pas réutiliser ailleurs)
+$logo-gradient-letters: linear-gradient(211.16deg, #FC7152 30.6%, #E74530 95.83%);
+$logo-red-accent:       #E64631;
+
+// Alias sémantiques — préfère ceux-ci dans les composants
+$text-primary:    $color-black;
+$text-secondary:  $color-grey-dark;
+$text-on-dark:    $color-white;
+$border-default:  $color-grey-light;
+$surface:         $color-white;
+$surface-muted:   $color-grey-light;
+
+// --------------------------------------------
+// TYPOGRAPHIE
+// --------------------------------------------
+
+$font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+$font-weight-regular:  400; // texte courant, items de menu
+$font-weight-medium:   500; // titres de carte, labels, boutons
+$font-weight-bold:     700; // item de menu survolé
+
+$font-size-xs:   12px; // aide contextuelle, tags, copyright
+$font-size-sm:   14px; // corps de texte, menu, boutons, prix
+$font-size-md:   18px; // titre de carte
+$font-size-lg:   24px; // menu mobile ouvert
+$font-size-xl:   32px; // titres de section
+
+$line-height:    1.426; // 142.6% dans toute la maquette
+
+// --------------------------------------------
+// ESPACEMENTS
+// --------------------------------------------
+
+$space-1:   4px;
+$space-2:   6px;
+$space-3:   8px;
+$space-4:  10px;
+$space-5:  16px;
+$space-6:  20px;
+$space-7:  24px;
+$space-8:  28px;
+$space-9:  32px;
+$space-10: 36px;
+$space-11: 40px;
+$space-12: 48px;
+
+// --------------------------------------------
+// RAYONS
+// --------------------------------------------
+
+$radius-sm:  4px;  // champs de formulaire
+$radius-md:  5px;  // petits boutons, tags, bouton favori
+$radius-lg: 10px;  // cartes, boutons principaux, header
+
+// --------------------------------------------
+// OMBRES
+// --------------------------------------------
+
+$shadow-header: 0px 4px 4px rgba(182, 182, 182, 0.05);
+
+// --------------------------------------------
+// POINTS DE RUPTURE
+// --------------------------------------------
+// Maquette mobile : 390px de large
+// Maquette desktop : 1440px de large
+
+$breakpoint-mobile:  390px;
+$breakpoint-tablet:  768px;
+$breakpoint-desktop: 1024px;
+$max-width-content:  1440px;
+// Largeur reelle du contenu dans la maquette. A 1115px, les trois colonnes
+// de la grille font exactement 355px : la largeur d'une carte.
+$content-width:      1115px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet - 1px}) { @content; }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-tablet}) { @content; }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-desktop}) { @content; }
+}
+
+// --------------------------------------------
+// DIMENSIONS DE COMPOSANTS
+// --------------------------------------------
+
+$card-width:          355px;
+$card-image-height:   376px;
+$card-details-height: 176px;
+$card-details-padding: $space-5 $space-7 $space-7; // 16px 24px 24px
+
+$button-height:       36px;
+$button-padding:      $space-3 $space-9;  // 8px 32px
+$button-icon-size:    32px;               // bouton icône seule
+$icon-size:           16px;
+
+$input-height:        40px;
+$input-padding:       $space-5 $space-4;  // 16px 10px
+
+$header-padding-desktop: $space-3 100px;
+$footer-padding:         $space-3 $space-11; // 8px 40px
+
+// --------------------------------------------
+// TRANSITIONS
+// --------------------------------------------
+// Le backlog demande des animations « fluides et discrètes »
+
+$transition-fast:   150ms ease;
+$transition-base:   300ms ease;

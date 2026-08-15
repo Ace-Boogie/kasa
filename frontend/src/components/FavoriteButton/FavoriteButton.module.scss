@@ -1,0 +1,49 @@
+@use '../../styles/variables' as *;
+@use 'sass:color';
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $button-icon-size;
+  height: $button-icon-size;
+  padding: 0;
+  border: none;
+  border-radius: $radius-md;
+  background: $color-grey-light;
+  color: $color-grey-dark;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  // Zone tactile de 44x44 sans changer le visuel : recommandation WCAG.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+  }
+
+  &:hover {
+    background: color.adjust($color-grey-light, $lightness: -5%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.active {
+  background: $color-main-red;
+  color: $color-white;
+
+  &:hover {
+    background: $color-dark-orange;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

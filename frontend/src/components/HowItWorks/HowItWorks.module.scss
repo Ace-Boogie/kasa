@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-11;
+  width: 100%;
+  padding: $space-11 $space-3;
+  background: $surface;
+  border-radius: $radius-lg;
+
+  @include tablet-up {
+    padding: $space-11;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.text {
+  // La maquette repartit cette phrase sur deux lignes ; `balance` les egalise.
+  max-width: 800px;
+  text-wrap: balance;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: $space-3;
+  width: 100%;
+  max-width: 842px;
+
+  @include tablet-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-5;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 44px 22px;
+  // Contraste blanc sur #842C16 : environ 8,9:1, largement au-dessus du seuil AA.
+  background: $color-dark-orange;
+  border: 1px solid $color-grey-light;
+  border-radius: $radius-lg;
+  color: $color-white;
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: inherit;
+}
+
+.stepText {
+  margin: 0;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: inherit;
+}

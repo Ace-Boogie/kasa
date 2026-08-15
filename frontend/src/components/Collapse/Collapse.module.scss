@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+
+.collapse {
+  width: 100%;
+}
+
+.heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  padding: $space-3 0;
+  border: none;
+  border-bottom: 1px solid $color-grey-light;
+  background: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $text-primary;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-main-red;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.chevron {
+  flex: none;
+  color: $color-main-red;
+  transition: transform $transition-base;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.panel {
+  // 0fr -> 1fr anime la hauteur sans la mesurer en JavaScript.
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $transition-base;
+}
+
+.panelOpen {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.content {
+  padding: $space-5 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+}
