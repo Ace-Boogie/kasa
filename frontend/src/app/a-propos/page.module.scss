@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $space-3;
+  gap: $space-5;
   text-align: center;
 }
 
@@ -24,11 +24,37 @@
 }
 
 .lead {
-  max-width: 742px;
+  max-width: 820px;
   margin: 0;
   font-size: $font-size-sm;
   line-height: $line-height;
   color: $text-primary;
+  text-wrap: balance;
+}
+
+.wideImage {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-grey-light;
+
+  @include tablet-up {
+    height: 373px;
+  }
+}
+
+.split {
+  display: grid;
+  gap: $space-11;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @include desktop-up {
+    // Proportions de la maquette : bloc de texte a gauche, image a droite.
+    grid-template-columns: minmax(0, 618fr) minmax(0, 448fr);
+  }
 }
 
 .mission {
@@ -62,4 +88,21 @@
   font-weight: $font-weight-medium;
   line-height: $line-height;
   color: $color-main-red;
+}
+
+.tallImage {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-grey-light;
+
+  @include tablet-up {
+    height: 372px;
+  }
+}
+
+.image {
+  object-fit: cover;
 }

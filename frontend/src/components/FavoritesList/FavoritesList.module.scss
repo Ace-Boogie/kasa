@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+
+.status {
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-secondary;
+  text-align: center;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  gap: $space-7;
+  grid-template-columns: 1fr;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-7;
+  padding: $space-12 $space-5;
+  text-align: center;
+}
+
+.emptyText {
+  max-width: 480px;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-primary;
+  text-wrap: balance;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $button-height;
+  padding: $button-padding;
+  background: $color-main-red;
+  color: $color-white;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover { background: $color-dark-orange; }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 2px;
+  }
+}

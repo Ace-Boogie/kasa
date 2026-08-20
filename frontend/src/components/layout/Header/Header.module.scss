@@ -1,6 +1,9 @@
 @use '../../../styles/variables' as *;
 
 .wrapper {
+  // Le <body> est un conteneur flex : sans largeur explicite, `margin: auto`
+  // desactive l'etirement et la barre se retrecit a son contenu.
+  width: 100%;
   max-width: $content-width;
   margin: 0 auto;
   // Mobile : la barre blanche va d'un bord a l'autre, comme la maquette.

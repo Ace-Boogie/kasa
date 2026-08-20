@@ -4,7 +4,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $space-5;
+  gap: $space-11;
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
   text-align: center;
 }
 
@@ -17,27 +25,10 @@
 }
 
 .text {
+  max-width: 640px;
   margin: 0;
-  max-width: 742px;
   font-size: $font-size-sm;
   line-height: $line-height;
   color: $text-primary;
-}
-
-.grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: grid;
-  gap: $space-7;
-  grid-template-columns: 1fr;
-
-  @include tablet-up {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include desktop-up {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  text-wrap: balance;
 }

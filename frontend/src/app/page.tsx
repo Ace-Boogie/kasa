@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getProperties } from '@/lib/api/properties';
 import PropertyCard from '@/components/PropertyCard/PropertyCard';
-import FavoritesSection from '@/components/FavoritesSection/FavoritesSection';
 import HowItWorks from '@/components/HowItWorks/HowItWorks';
 import styles from './page.module.scss';
 
@@ -56,8 +55,6 @@ export default async function HomePage() {
           ))}
         </ul>
       </section>
-
-      <FavoritesSection properties={properties} />
 
       <HowItWorks />
     </>
