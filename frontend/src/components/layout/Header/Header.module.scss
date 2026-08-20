@@ -1,9 +1,9 @@
 @use '../../../styles/variables' as *;
 
 .wrapper {
-  width: 100%;
   max-width: $content-width;
   margin: 0 auto;
+  // Mobile : la barre blanche va d'un bord a l'autre, comme la maquette.
   padding: 0;
 
   @include tablet-up {
@@ -56,9 +56,12 @@
   display: flex;
   align-items: center;
   gap: $space-8;
+  white-space: nowrap;
 }
 
 .logo {
+  // Sans `flex: none`, flexbox comprime le logo quand la barre manque de place.
+  flex: none;
   display: flex;
   align-items: center;
   border-radius: $radius-md;

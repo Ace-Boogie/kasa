@@ -53,56 +53,56 @@ export default function MobileMenu({ items }: { items: NavItem[] }) {
   }
 
   return (
-    <>
-      <button
-        ref={openButtonRef}
-        type="button"
-        onClick={() => setIsOpen(true)}
-        aria-expanded={isOpen}
-        aria-label="Ouvrir le menu"
-        className={styles.burger}
-      >
-        <MenuIcon width={29} height={29} />
-      </button>
+      <>
+        <button
+            ref={openButtonRef}
+            type="button"
+            onClick={() => setIsOpen(true)}
+            aria-expanded={isOpen}
+            aria-label="Ouvrir le menu"
+            className={styles.burger}
+        >
+          <MenuIcon width={29} height={29} />
+        </button>
 
-      {isOpen && (
-        <div className={styles.panel} role="dialog" aria-modal="true" aria-label="Menu">
-          <div className={styles.panelHeader}>
-            <Link href="/" aria-label="Kasa, retour à l'accueil">
-              <Image src="/logo-picto.svg" alt="" width={46} height={53} />
-            </Link>
-            <button
-              ref={closeButtonRef}
-              type="button"
-              onClick={close}
-              aria-label="Fermer le menu"
-              className={styles.close}
-            >
-              <CloseIcon width={26} height={26} />
-            </button>
-          </div>
+        {isOpen && (
+            <div className={styles.panel} role="dialog" aria-modal="true" aria-label="Menu">
+              <div className={styles.panelHeader}>
+                <Link href="/" aria-label="Kasa, retour à l'accueil">
+                  <Image src="/logo-picto.svg" alt="" width={46} height={53} />
+                </Link>
+                <button
+                    ref={closeButtonRef}
+                    type="button"
+                    onClick={close}
+                    aria-label="Fermer le menu"
+                    className={styles.close}
+                >
+                  <CloseIcon width={26} height={26} />
+                </button>
+              </div>
 
-          <nav aria-label="Navigation principale">
-            <ul className={styles.list}>
-              {items.map((item) => (
-                <li key={item.href} className={styles.item}>
-                  <Link
-                    href={item.href}
-                    aria-current={pathname === item.href ? 'page' : undefined}
-                    className={styles.link}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+              <nav aria-label="Navigation principale">
+                <ul className={styles.list}>
+                  {items.map((item) => (
+                      <li key={item.href} className={styles.item}>
+                        <Link
+                            href={item.href}
+                            aria-current={pathname === item.href ? 'page' : undefined}
+                            className={styles.link}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                  ))}
+                </ul>
+              </nav>
 
-          <Link href="/ajouter-un-logement" className={styles.cta}>
-            Ajouter un logement
-          </Link>
-        </div>
-      )}
-    </>
+              <Link href="/connexion" className={styles.cta}>
+                Se connecter
+              </Link>
+            </div>
+        )}
+      </>
   );
 }

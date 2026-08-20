@@ -1,0 +1,11 @@
+import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
+
+const COOKIE_NAME = 'kasa_token';
+
+/** Déconnexion : supprime le cookie de session. */
+export async function POST() {
+  const cookieStore = await cookies();
+  cookieStore.delete(COOKIE_NAME);
+  return NextResponse.json({ ok: true });
+}

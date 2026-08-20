@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.error {
+  margin: 0;
+  padding: $space-3 $space-4;
+  background: $color-light-orange;
+  border: 1px solid $color-main-red;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  // Contraste du texte sur fond tres clair : environ 7,4:1.
+  color: $color-main-red;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  color: $text-primary;
+}
+
+.input {
+  height: $input-height;
+  padding: $input-padding;
+  background: $surface;
+  border: 1px solid $color-grey-light;
+  border-radius: $radius-sm;
+  font: inherit;
+  font-size: $font-size-sm;
+  color: $text-primary;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+    border-color: $color-main-red;
+  }
+}
+
+.submit {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 230px;
+  height: $button-height;
+  padding: $button-padding;
+  border: none;
+  border-radius: $radius-lg;
+  background: $color-main-red;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover:not(:disabled) {
+    background: $color-dark-orange;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    background: $color-grey-light;
+    color: $text-secondary;
+    cursor: not-allowed;
+  }
+}
