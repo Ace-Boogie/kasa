@@ -1,3 +1,11 @@
+/**
+ * Page de connexion.
+ *
+ * La coquille est statique ; seul le formulaire est un composant client.
+ * Les identifiants transitent par `/api/auth/login`, qui pose le cookie
+ * de session côté serveur.
+ */
+
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import LoginForm from '@/components/LoginForm/LoginForm';

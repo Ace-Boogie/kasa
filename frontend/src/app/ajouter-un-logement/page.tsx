@@ -1,3 +1,5 @@
+/** Page d'attente : cette fonctionnalité relève du Sprint 2. */
+
 import ComingSoon from '@/components/ComingSoon/ComingSoon';
 
 export const metadata = { title: 'Ajouter un logement' };
