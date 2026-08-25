@@ -1,7 +1,6 @@
 'use client';
 
 import { useId, useState, type FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
 import styles from './LoginForm.module.scss';
 
 /**
@@ -14,7 +13,6 @@ import styles from './LoginForm.module.scss';
 export default function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
-  const router = useRouter();
 
   const emailId = useId();
   const passwordId = useId();
@@ -43,8 +41,9 @@ export default function LoginForm() {
         return;
       }
 
-      router.push('/');
-      router.refresh();
+      // Rechargement complet plutôt que router.push : le header appartient au
+      // layout et ne serait pas remonté par une navigation côté client.
+      window.location.href = '/';
     } catch {
       setError('Impossible de joindre le serveur. Vérifiez votre connexion.');
     } finally {

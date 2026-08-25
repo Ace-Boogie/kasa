@@ -91,6 +91,13 @@
   }
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-6;
+  font-size: $font-size-md;
+}
+
 .cta {
   align-self: flex-start;
   display: inline-flex;

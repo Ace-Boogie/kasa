@@ -34,10 +34,10 @@ export default function HostCard({ host, rating, ratingsCount }: HostCardProps) 
 
             {/* Destinations distinctes : deux liens vers la même URL sont
           signalés comme redondants par les outils d'audit. */}
-            <Link href="/messagerie" className={styles.button}>
+            <Link href={`/messagerie/conv-${host.id}`} className={styles.button}>
                 Contacter l’hôte
             </Link>
-            <Link href="/messagerie#nouveau-message" className={styles.button}>
+            <Link href={`/messagerie/conv-${host.id}#nouveau-message`} className={styles.button}>
                 Envoyer un message
             </Link>
         </aside>

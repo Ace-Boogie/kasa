@@ -144,3 +144,19 @@ export function TrashIcon(props: IconProps) {
     </svg>
   );
 }
+
+/** Porte avec flèche sortante — déconnexion. */
+export function LogoutIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path
+        d="M9.5 2.5H4C3.17 2.5 2.5 3.17 2.5 4v8c0 .83.67 1.5 1.5 1.5h5.5a.5.5 0 0 0 0-1H4a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5h5.5a.5.5 0 0 0 0-1Z"
+        fill="currentColor"
+      />
+      <path
+        d="M11.15 5.15a.5.5 0 0 1 .7 0l2.5 2.5a.5.5 0 0 1 0 .7l-2.5 2.5a.5.5 0 0 1-.7-.7L12.79 8.5H6.5a.5.5 0 0 1 0-1h6.29l-1.64-1.65a.5.5 0 0 1 0-.7Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

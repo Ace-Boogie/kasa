@@ -1,11 +1,3 @@
-/**
- * Page de connexion.
- *
- * La coquille est statique ; seul le formulaire est un composant client.
- * Les identifiants transitent par `/api/auth/login`, qui pose le cookie
- * de session côté serveur.
- */
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import LoginForm from '@/components/LoginForm/LoginForm';
@@ -32,12 +24,16 @@ export default function LoginPage() {
 
       <LoginForm />
 
-      {/* Ces parcours relevent du Sprint 2 : les liens menent a la page
-          d'attente plutot que de renvoyer sur eux-memes. */}
       <p className={styles.links}>
-        <Link href="/inscription" className={styles.link}>
+        {/* Present dans la maquette, mais la reinitialisation par email n'est
+            pas implementee : un <span> plutot qu'un lien sans destination,
+            qui serait annonce comme cliquable par un lecteur d'ecran. */}
+        <span
+          className={styles.linkDisabled}
+          title="Fonctionnalité à venir"
+        >
           Mot de passe oublié
-        </Link>
+        </span>
         <Link href="/inscription" className={styles.link}>
           Pas encore de compte&nbsp;? Inscrivez-vous
         </Link>

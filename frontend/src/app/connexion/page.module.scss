@@ -72,3 +72,11 @@
     border-radius: 2px;
   }
 }
+
+/** Libelle non cliquable : la fonctionnalite n'est pas implementee. */
+.linkDisabled {
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  color: $text-secondary;
+  cursor: default;
+}
