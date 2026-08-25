@@ -1,10 +1,10 @@
 import mockConversations from './conversations.mock.json';
 import type {
-    Conversation,
-    ConversationSummary,
-    Message,
-    RawConversation,
-    RawMessage,
+  Conversation,
+  ConversationSummary,
+  Message,
+  RawConversation,
+  RawMessage,
 } from '@/types/message';
 
 /**
@@ -26,36 +26,36 @@ const conversations = mockConversations as RawConversation[];
 
 /** Convertit un message brut en camelCase. */
 function normalizeMessage(raw: RawMessage): Message {
-    return {
-        id: raw.id,
-        author: raw.author,
-        body: raw.body,
-        sentAt: raw.sent_at,
-    };
+  return {
+    id: raw.id,
+    author: raw.author,
+    body: raw.body,
+    sentAt: raw.sent_at,
+  };
 }
 
 /** Convertit une conversation brute en camelCase, messages inclus. */
 function normalize(raw: RawConversation): Conversation {
-    const messages = raw.messages.map(normalizeMessage);
-    const last = messages.at(-1);
+  const messages = raw.messages.map(normalizeMessage);
+  const last = messages.at(-1);
 
-    return {
-        id: raw.id,
-        host: raw.host,
-        propertyId: raw.property_id,
-        propertySlug: raw.property_slug,
-        propertyTitle: raw.property_title,
-        lastMessage: last?.body ?? '',
-        lastMessageAt: last?.sentAt ?? '',
-        isUnread: raw.is_unread,
-        messages,
-    };
+  return {
+    id: raw.id,
+    host: raw.host,
+    propertyId: raw.property_id,
+    propertySlug: raw.property_slug,
+    propertyTitle: raw.property_title,
+    lastMessage: last?.body ?? '',
+    lastMessageAt: last?.sentAt ?? '',
+    isUnread: raw.is_unread,
+    messages,
+  };
 }
 
 /** Retire le fil de messages : la liste n'a besoin que de l'aperçu. */
 function toSummary({ messages, ...summary }: Conversation): ConversationSummary {
-    void messages;
-    return summary;
+  void messages;
+  return summary;
 }
 
 /**
@@ -64,10 +64,10 @@ function toSummary({ messages, ...summary }: Conversation): ConversationSummary 
  * @returns Un tableau vide si l'utilisateur n'a encore aucun échange.
  */
 export async function getConversations(): Promise<ConversationSummary[]> {
-    return conversations
-        .map(normalize)
-        .sort((a, b) => b.lastMessageAt.localeCompare(a.lastMessageAt))
-        .map(toSummary);
+  return conversations
+    .map(normalize)
+    .sort((a, b) => b.lastMessageAt.localeCompare(a.lastMessageAt))
+    .map(toSummary);
 }
 
 /**
@@ -78,8 +78,8 @@ export async function getConversations(): Promise<ConversationSummary[]> {
  *          `notFound()`.
  */
 export async function getConversation(id: string): Promise<Conversation | null> {
-    const found = conversations.find((c) => c.id === id);
-    return found ? normalize(found) : null;
+  const found = conversations.find((c) => c.id === id);
+  return found ? normalize(found) : null;
 }
 
 /**
@@ -91,5 +91,5 @@ export async function getConversation(id: string): Promise<Conversation | null> 
  * @param hostId Identifiant de l'hôte tel que renvoyé par `/api/properties`.
  */
 export function getConversationIdForHost(hostId: number): string {
-    return `conv-${hostId}`;
+  return `conv-${hostId}`;
 }

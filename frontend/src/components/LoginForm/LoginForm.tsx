@@ -10,6 +10,28 @@ import styles from './LoginForm.module.scss';
  * dialogue avec l'API Express et pose le cookie de session. Le jeton n'arrive
  * jamais jusqu'à ce composant.
  */
+/**
+ * Page à afficher après connexion.
+ *
+ * Le middleware ajoute `?suite=/favoris` lorsqu'il redirige un visiteur
+ * déconnecté. On n'accepte qu'un chemin interne, commençant par une seule
+ * barre oblique : `//exemple.com` serait interprété comme une URL absolue et
+ * permettrait une redirection vers un site tiers.
+ *
+ * Lu depuis `window.location` au moment de l'envoi plutôt qu'avec
+ * `useSearchParams` : ce hook impose d'envelopper la page dans un `Suspense`,
+ * alors que `/connexion` est prérendue.
+ */
+function getRedirectTarget(): string {
+  const suite = new URLSearchParams(window.location.search).get('suite');
+
+  if (suite && suite.startsWith('/') && !suite.startsWith('//')) {
+    return suite;
+  }
+
+  return '/';
+}
+
 export default function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
@@ -43,7 +65,7 @@ export default function LoginForm() {
 
       // Rechargement complet plutôt que router.push : le header appartient au
       // layout et ne serait pas remonté par une navigation côté client.
-      window.location.href = '/';
+      window.location.href = getRedirectTarget();
     } catch {
       setError('Impossible de joindre le serveur. Vérifiez votre connexion.');
     } finally {
