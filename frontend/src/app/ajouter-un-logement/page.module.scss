@@ -1,0 +1,250 @@
+@use '../../styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  width: 100%;
+}
+
+.back {
+  align-self: flex-start;
+  padding: $space-3 $space-5;
+  background: $surface-muted;
+  border-radius: $radius-lg;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $border-default;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-6;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-black;
+
+  @include mobile {
+    font-size: $font-size-md;
+  }
+}
+
+.submit {
+  flex: none;
+  height: $button-height;
+  padding: $button-padding;
+  background: $color-main-red;
+  border: none;
+  border-radius: $radius-lg;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  // La publication relève du Sprint 2 : le bouton reste inactif.
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.notice {
+  margin: 0;
+  padding: $space-4 $space-5;
+  background: $surface;
+  border: 1px solid $border-default;
+  border-radius: $radius-lg;
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}
+
+/**
+ * Deux colonnes en desktop, comme la maquette : informations et photos sur
+ * la première rangée, équipements et catégories sur la seconde.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: $space-5;
+
+  @include mobile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  min-width: 0;
+  margin: 0;
+  padding: $space-12 $space-11;
+  background: $surface;
+  border: 1px solid $border-default;
+  border-radius: $radius-lg;
+
+  @include mobile {
+    padding: $space-5;
+  }
+}
+
+/** La carte des informations s'aligne en hauteur sur la pile de droite. */
+.cardInfos {
+  height: 100%;
+}
+
+.cardEquipments,
+.cardCategories {
+  height: 100%;
+}
+
+.legend {
+  padding: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: $input-padding;
+  background: $surface;
+  border: 1px solid $border-default;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  color: $text-primary;
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 1px;
+  }
+}
+
+.input {
+  height: $input-height;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/** Champ suivi de son bouton d'ajout, comme dans la maquette. */
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.add {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  background: $color-main-red;
+  border: none;
+  border-radius: $radius-md;
+  color: $color-white;
+  font-size: $font-size-md;
+  line-height: 1;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+/** Repris de la maquette. Texte, pas lien : la fonction n'existe pas encore. */
+.addMore {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $color-main-red;
+}
+
+.checkList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-3 $space-5;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include mobile {
+    gap: $space-3;
+  }
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.checkbox {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  accent-color: $color-main-red;
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 2px;
+  }
+}
+
+.checkLabel {
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: $space-3 $space-5;
+  background: $surface-muted;
+  border-radius: $radius-md;
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}

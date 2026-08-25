@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+
+/** Invitation affichée dans le panneau de droite, tant qu'aucun fil n'est ouvert. */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  padding: $space-11;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  text-align: center;
+}

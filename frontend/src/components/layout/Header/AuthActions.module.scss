@@ -1,0 +1,59 @@
+@use '../../../styles/variables' as *;
+
+/** Reserve la largeur du libelle le plus court pendant le chargement. */
+.placeholder {
+  display: inline-block;
+  width: 96px;
+  height: 20px;
+}
+
+.link {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
+  color: $color-main-red;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    font-weight: $font-weight-bold;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $icon-size;
+  height: $icon-size;
+  padding: 0;
+  border: none;
+  background: none;
+  color: $color-main-red;
+  cursor: pointer;
+
+  // Zone tactile confortable sans modifier le visuel.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+  }
+
+  position: relative;
+
+  &:hover {
+    color: $color-dark-orange;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}

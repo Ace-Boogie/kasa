@@ -1,0 +1,92 @@
+@use '../../styles/variables' as *;
+
+.shell {
+  display: flex;
+  width: 100%;
+  background: $color-light-orange;
+  border-radius: $radius-lg;
+  box-shadow: 0 4px 14px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  // Hauteur de la maquette (814px), plafonnée pour qu'un écran court ne
+  // repousse jamais le champ de saisie hors de la fenêtre.
+  height: 814px;
+  max-height: calc(100dvh - 220px);
+
+  @include mobile {
+    // En mobile, un seul panneau est visible et la page défile
+    // normalement : pas de conteneur à hauteur fixe, donc pas de double
+    // barre de défilement imbriquée.
+    height: auto;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.listPanel {
+  flex: none;
+  width: 376px;
+  background: $surface;
+  border-right: 1px solid $border-default;
+
+  @include mobile {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+.detailPanel {
+  flex: 1;
+  min-width: 0;
+}
+
+/** Panneau replié en mobile — retiré aussi du parcours clavier. */
+.hiddenOnMobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+.listHeader {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding: $space-5 $space-4 $space-4;
+}
+
+.back {
+  align-self: flex-start;
+  padding: $space-3 $space-5;
+  background: $surface-muted;
+  border-radius: $radius-lg;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $border-default;
+  }
+}
+
+.listTitle {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.listScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}

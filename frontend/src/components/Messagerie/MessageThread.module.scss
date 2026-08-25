@@ -1,0 +1,225 @@
+@use '../../styles/variables' as *;
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: $color-light-orange;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-5 $space-6;
+  background: $surface;
+  border-bottom: 1px solid $border-default;
+}
+
+.back {
+  align-self: flex-start;
+  padding: $space-3 $space-5;
+  background: $surface-muted;
+  border-radius: $radius-lg;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+
+  // La liste est visible à gauche en desktop : le retour n'y sert à rien.
+  @include tablet-up {
+    display: none;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+.property {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  color: $text-secondary;
+  width: fit-content;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0;
+  padding: $space-11 $space-6;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-7;
+
+  @include mobile {
+    padding: $space-6 $space-4;
+  }
+}
+
+/** Séparateur de journée : un trait de part et d'autre de la date. */
+.day {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin: 0 0 $space-7;
+  font-size: $font-size-xs;
+  color: $text-secondary;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $text-secondary;
+    opacity: 0.4;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+}
+
+/** Mes messages : bulle sombre, poussée à droite, avatar après le texte. */
+.messageMine {
+  flex-direction: row-reverse;
+
+  .bubbleGroup {
+    align-items: flex-end;
+  }
+
+  .bubble {
+    background: $color-dark-orange;
+    border: 1px solid $border-default;
+    border-radius: $radius-lg + 10px 0 $radius-lg + 10px $radius-lg + 10px;
+    color: $text-on-dark;
+  }
+
+  .avatar {
+    // Le message émis vient de l'utilisateur : son avatar n'est pas connu,
+    // seul celui de l'hôte l'est. On masque plutôt que d'inventer.
+    visibility: hidden;
+  }
+}
+
+.avatar {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: $radius-md + 1px;
+}
+
+.bubbleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-3;
+  max-width: 273px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  margin: 0;
+  // La maquette descend à 8px, illisible. Relevé à 12px.
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: $text-secondary;
+}
+
+.bubble {
+  margin: 0;
+  padding: $space-4 $space-5;
+  background: $surface;
+  border: 1px solid $border-default;
+  border-radius: 0 $radius-lg + 10px $radius-lg + 10px $radius-lg + 10px;
+  font-size: $font-size-sm;
+  color: $text-primary;
+  // Conserve les retours à la ligne saisis dans le champ.
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.composer {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  gap: $space-4;
+  padding: $space-5 $space-6 $space-3;
+  background: $surface;
+  border-top: 1px solid $border-default;
+}
+
+.input {
+  flex: 1;
+  padding: $space-4;
+  background: $surface;
+  border: 1px solid $border-default;
+  border-radius: $radius-lg;
+  font-size: $font-size-sm;
+  color: $text-primary;
+  resize: none;
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-main-red;
+    outline-offset: 1px;
+  }
+}
+
+.send {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $button-icon-size;
+  height: $button-icon-size;
+  margin-bottom: $space-1;
+  background: $color-main-red;
+  border: none;
+  border-radius: $radius-md;
+  color: $color-white;
+  cursor: pointer;
+  transition: background $transition-fast;
+
+  &:hover:not(:disabled) {
+    background: $color-dark-orange;
+  }
+
+  &:disabled {
+    background: $surface-muted;
+    color: $text-secondary;
+    cursor: not-allowed;
+  }
+}
+
+.notice {
+  flex: none;
+  margin: 0;
+  padding: 0 $space-6 $space-5;
+  background: $surface;
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}

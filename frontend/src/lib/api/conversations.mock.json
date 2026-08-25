@@ -1,0 +1,314 @@
+[
+  {
+    "id": "conv-12",
+    "host": {
+      "id": 12,
+      "name": "Michel Romy",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-11.jpg"
+    },
+    "property_id": "6ff132c6",
+    "property_slug": "charmant-studio",
+    "property_title": "Charmant studio",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-12-1",
+        "author": "me",
+        "body": "Bonjour, quel est le quartier le plus proche pour faire ses courses ?",
+        "sent_at": "2025-09-18T17:30:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-11",
+    "host": {
+      "id": 11,
+      "name": "Julie Donatella",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-10.jpg"
+    },
+    "property_id": "1e180563",
+    "property_slug": "charmant-apt-aux-portes-de-paris",
+    "property_title": "Charmant apt aux portes de Paris",
+    "is_unread": true,
+    "messages": [
+      {
+        "id": "msg-11-1",
+        "author": "me",
+        "body": "Bonjour, le logement est-il accessible en fauteuil roulant ?",
+        "sent_at": "2025-09-17T09:00:00+02:00"
+      },
+      {
+        "id": "msg-11-2",
+        "author": "host",
+        "body": "L'immeuble a un ascenseur, mais il y a trois marches à l'entrée. Je peux vous envoyer des photos si vous voulez juger.",
+        "sent_at": "2025-09-17T09:48:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-10",
+    "host": {
+      "id": 10,
+      "name": "Karen Guillet",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-9.jpg"
+    },
+    "property_id": "7cbb378e",
+    "property_slug": "grande-maison-proche-banlieue",
+    "property_title": "Grande Maison proche banlieue",
+    "is_unread": true,
+    "messages": [
+      {
+        "id": "msg-10-1",
+        "author": "me",
+        "body": "Bonjour, y a-t-il une machine à laver dans le logement ?",
+        "sent_at": "2025-09-16T13:25:00+02:00"
+      },
+      {
+        "id": "msg-10-2",
+        "author": "host",
+        "body": "Oui, lave-linge et sèche-linge dans la salle de bain. La lessive est fournie.",
+        "sent_at": "2025-09-16T14:02:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-9",
+    "host": {
+      "id": 9,
+      "name": "Sarah Devit",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-8.jpg"
+    },
+    "property_id": "af6d2d48",
+    "property_slug": "bungalow-dans-la-foret",
+    "property_title": "Bungalow dans la forêt",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-9-1",
+        "author": "host",
+        "body": "Bonjour ! Je viens de mettre à jour le calendrier, la semaine que vous cherchiez s'est libérée.",
+        "sent_at": "2025-09-15T07:55:00+02:00"
+      },
+      {
+        "id": "msg-9-2",
+        "author": "me",
+        "body": "Excellente nouvelle, merci de m'avoir prévenu !",
+        "sent_at": "2025-09-15T08:12:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-8",
+    "host": {
+      "id": 8,
+      "name": "Victor Moran",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-7.jpg"
+    },
+    "property_id": "2cf259e1",
+    "property_slug": "charmant-studio-marais",
+    "property_title": "Charmant Studio Marais",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-8-1",
+        "author": "me",
+        "body": "Bonjour, est-il possible de rester une nuit de plus ?",
+        "sent_at": "2025-09-14T16:40:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-7",
+    "host": {
+      "id": 7,
+      "name": "Adrien Chiran",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-6.jpg"
+    },
+    "property_id": "d60ca600",
+    "property_slug": "appartement-moderne-sur-parc",
+    "property_title": "Appartement moderne sur parc",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-7-1",
+        "author": "me",
+        "body": "Bonjour, la connexion internet est-elle assez stable pour du télétravail ?",
+        "sent_at": "2025-09-12T10:20:00+02:00"
+      },
+      {
+        "id": "msg-7-2",
+        "author": "host",
+        "body": "Oui, fibre à 500 Mb/s, et il y a un bureau avec une vraie chaise dans la chambre.",
+        "sent_at": "2025-09-12T11:05:00+02:00"
+      },
+      {
+        "id": "msg-7-3",
+        "author": "me",
+        "body": "Parfait, c'est exactement ce qu'il me fallait. Je réserve.",
+        "sent_at": "2025-09-12T11:18:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-6",
+    "host": {
+      "id": 6,
+      "name": "Sébastien Fournier",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-5.jpg"
+    },
+    "property_id": "bc6f7112",
+    "property_slug": "superbe-appartement-proche-tour-eiffel",
+    "property_title": "Superbe appartement proche Tour Eiffel",
+    "is_unread": true,
+    "messages": [
+      {
+        "id": "msg-6-1",
+        "author": "host",
+        "body": "Bonjour, j'ai bien reçu votre demande. Le logement est en travaux jusqu'au 20 septembre, mais tout sera prêt après.",
+        "sent_at": "2025-09-11T12:00:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-5",
+    "host": {
+      "id": 5,
+      "name": "Hugo Perrier",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-4.jpg"
+    },
+    "property_id": "2139a317",
+    "property_slug": "cheap-chambre-paris-20",
+    "property_title": "Cheap - Chambre Paris 20",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-5-1",
+        "author": "me",
+        "body": "Bonjour, à quelle heure se fait l'arrivée ?",
+        "sent_at": "2025-09-10T08:50:00+02:00"
+      },
+      {
+        "id": "msg-5-2",
+        "author": "host",
+        "body": "L'arrivée est possible à partir de 16 h, et le départ avant 11 h. Si votre train arrive plus tôt, je peux garder vos bagages.",
+        "sent_at": "2025-09-10T09:30:00+02:00"
+      },
+      {
+        "id": "msg-5-3",
+        "author": "me",
+        "body": "C'est très aimable, on arrive vers 13 h donc je vais en profiter.",
+        "sent_at": "2025-09-10T09:44:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-4",
+    "host": {
+      "id": 4,
+      "name": "Line Rolland",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-3.jpg"
+    },
+    "property_id": "f72a452f",
+    "property_slug": "studio-d-artiste",
+    "property_title": "Studio d'artiste",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-4-1",
+        "author": "me",
+        "body": "Bonsoir, le logement accepte-t-il les animaux ? Nous voyageons avec un petit chien.",
+        "sent_at": "2025-09-08T20:15:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-3",
+    "host": {
+      "id": 3,
+      "name": "Franck Maher",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
+    },
+    "property_id": "0979876d",
+    "property_slug": "appartement-de-standing-10e",
+    "property_title": "Appartement de Standing - 10e",
+    "is_unread": false,
+    "messages": [
+      {
+        "id": "msg-3-1",
+        "author": "host",
+        "body": "Bonjour, merci pour votre réservation ! Je vous envoie les indications d'accès quelques jours avant votre arrivée.",
+        "sent_at": "2025-09-07T18:03:00+02:00"
+      },
+      {
+        "id": "msg-3-2",
+        "author": "me",
+        "body": "Merci beaucoup, c'est noté.",
+        "sent_at": "2025-09-07T18:40:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-2",
+    "host": {
+      "id": 2,
+      "name": "Della Case",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
+    },
+    "property_id": "b9123946",
+    "property_slug": "magnifique-appartement-proche-canal-saint-martin",
+    "property_title": "Magnifique appartement proche Canal Saint Martin",
+    "is_unread": true,
+    "messages": [
+      {
+        "id": "msg-2-1",
+        "author": "me",
+        "body": "Bonjour, y a-t-il un parking à proximité du logement ?",
+        "sent_at": "2025-09-05T09:12:00+02:00"
+      },
+      {
+        "id": "msg-2-2",
+        "author": "host",
+        "body": "Il y a un parking souterrain à 200 mètres, 18 € la journée. La rue est aussi gratuite le dimanche.",
+        "sent_at": "2025-09-05T10:45:00+02:00"
+      }
+    ]
+  },
+  {
+    "id": "conv-1",
+    "host": {
+      "id": 1,
+      "name": "Nathalie Jean",
+      "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
+    },
+    "property_id": "c67ab8a7",
+    "property_slug": "appartement-cosy",
+    "property_title": "Appartement cosy",
+    "is_unread": true,
+    "messages": [
+      {
+        "id": "msg-1-1",
+        "author": "me",
+        "body": "Bonjour, votre appartement est-il disponible pour le week-end du 12 au 14 octobre ?",
+        "sent_at": "2025-09-03T11:04:00+02:00"
+      },
+      {
+        "id": "msg-1-2",
+        "author": "host",
+        "body": "Bonjour ! Oui, il est libre à ces dates. Vous seriez combien ?",
+        "sent_at": "2025-09-03T14:22:00+02:00"
+      },
+      {
+        "id": "msg-1-3",
+        "author": "me",
+        "body": "Nous serions deux adultes.",
+        "sent_at": "2025-09-03T14:31:00+02:00"
+      },
+      {
+        "id": "msg-1-4",
+        "author": "host",
+        "body": "Parfait, c'est noté. Je vous bloque les dates jusqu'à demain soir.",
+        "sent_at": "2025-09-03T15:10:00+02:00"
+      }
+    ]
+  }
+]

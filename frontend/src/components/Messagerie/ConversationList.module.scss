@@ -1,0 +1,120 @@
+@use '../../styles/variables' as *;
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: $space-6;
+  padding: $space-3 $space-4;
+  background: $surface;
+  border-bottom: 1px solid $border-default;
+
+  // Le lien couvre toute la ligne : l'anneau de focus doit l'entourer elle,
+  // et non le seul nom.
+  &:has(.link:focus-visible) {
+    outline: 3px solid $color-main-red;
+    outline-offset: -3px;
+  }
+
+  &:hover {
+    background: $color-light-orange;
+  }
+}
+
+/** Conversation ouverte — fond distinct de la maquette. */
+.itemActive {
+  background: $color-light-orange;
+}
+
+.avatar {
+  flex: none;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: $radius-md;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  // `min-width: 0` autorise l'aperçu à se tronquer : sans lui, un enfant
+  // flex refuse de descendre sous la largeur de son contenu.
+  min-width: 0;
+  flex: 1;
+}
+
+.name {
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $text-primary;
+}
+
+/** Message non lu : nom en demi-gras, comme dans la maquette. */
+.nameUnread {
+  font-weight: $font-weight-medium;
+}
+
+.link {
+  text-decoration: none;
+
+  // Rend toute la ligne cliquable sans imbriquer de lien dans un lien.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  // L'anneau est porté par .item ci-dessus.
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.preview {
+  margin: 0;
+  // La maquette descend à 10px. Relevé à 12px : en dessous, le texte
+  // devient illisible et l'aperçu perd son utilité.
+  font-size: $font-size-xs;
+  color: $text-secondary;
+  // Aperçu sur une seule ligne, coupé par des points de suspension.
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $space-2;
+}
+
+.time {
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}
+
+/** Pastille de message non lu. L'information est aussi portée par le
+    texte masqué « Non lu » : la couleur seule ne suffit pas (WCAG 1.4.1). */
+.unread {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-main-red;
+}
+
+.empty {
+  margin: 0;
+  padding: $space-6 $space-5;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}
